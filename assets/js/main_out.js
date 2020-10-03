@@ -1,3 +1,4 @@
+
 (function(wHandle, wjQuery) {
     if (navigator.appVersion.indexOf("MSIE") != -1)
 	   alert("You're using a pretty old browser, some parts of the website might not work properly.");
@@ -357,9 +358,9 @@
                     admin = !!(flags & 0x40),
                     mod = !!(flags & 0x20);
 
-                if (server && name !== "SERVER") name = "[SERVER] " + name;
-                if (admin) name = "[ADMIN] " + name;
-                if (mod) name = "[MOD] " + name;
+                if (server && name !== "Drunk") name = "" + name;
+                if (admin) name = "Infected" + name;
+                if (mod) name = "" + name;
                 var wait = Math.max(3000, 1000 + message.length * 150);
                 chat.waitUntil = syncUpdStamp - chat.waitUntil > 1000 ? syncUpdStamp + wait : chat.waitUntil + wait;
                 chat.messages.push({
@@ -500,7 +501,7 @@
         showTextOutline: true,
         showColor: true,
         showSkins: true,
-        showMinimap: true,
+        showMinimap: false,
         darkTheme: false,
         allowGETipSet: false
     };
