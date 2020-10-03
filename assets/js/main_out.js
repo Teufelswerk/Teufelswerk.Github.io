@@ -502,7 +502,7 @@
         showColor: true,
         showSkins: true,
         showMinimap: false,
-        darkTheme: false,
+        darkTheme: true,
         allowGETipSet: false
     };
     var pressed = {
@@ -616,7 +616,7 @@
     }
 
     function drawStats() {
-        if (!stats.info) return stats.visible = false;
+        if (!stats.info) return stats.visible = true;
         stats.visible = true;
 
         var canvas = stats.canvas;
@@ -627,7 +627,7 @@
             `${stats.info.playersTotal} / ${stats.info.playersLimit} players`,
             `${stats.info.playersAlive} playing`,
             `${stats.info.playersSpect} spectating`,
-            `${(stats.info.update * 2.5).toFixed(1)}% load @ ${prettyPrintTime(stats.info.uptime)}`
+            `${(stats.info.update * 0.5).toFixed(1)}% load @ ${prettyPrintTime(stats.info.uptime)}`
         ];
         var width = 0;
         for (var i = 0; i < rows.length; i++)
