@@ -19,7 +19,7 @@ userScore.src = "sounds/userScore.mp3";
 const ball = {
     x : canvas.width/2,
     y : canvas.height/2,
-    radius : 8,
+    radius : 10,
     velocityX : 8,
     velocityY : 8,
     speed : 9,
@@ -33,17 +33,17 @@ const user = {
     width : 10,
     height : 100,
     score : 0,
-    color : "WHITE"
+    color : "GREEN"
 }
 
 // COM Paddle
 const com = {
     x : canvas.width - 10, // - width of paddle
-    y : (canvas.height - 100)/2, // -100 the height of paddle
+    y : (canvas.height - 90)/2, // -100 the height of paddle
     width : 10,
     height : 100,
     score : 0,
-    color : "WHITE"
+    color : "BLUE"
 }
 
 // NET
@@ -97,7 +97,7 @@ function drawNet(){
 // draw text
 function drawText(text,x,y){
     ctx.fillStyle = "#FFF";
-    ctx.font = "75px fantasy";
+    ctx.font = "60px fantasy";
     ctx.fillText(text, x, y);
 }
 
@@ -166,7 +166,7 @@ function update(){
         ball.velocityY = ball.speed * Math.sin(angleRad);
         
         // speed up the ball everytime a paddle hits it.
-        ball.speed += 0.9;
+        ball.speed += 1;
     }
 }
 
@@ -199,7 +199,7 @@ function game(){
     render();
 }
 // number of frame per second
-let fps = 30;
+let fps = 50;
 
 //run the game function 50 times every 1 Sec
 let loop = setInterval(game,1000/fps);
