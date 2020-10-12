@@ -29,7 +29,7 @@ const ball = {
 // User Paddle
 const user = {
     x : 0, // left side of canvas
-    y : (canvas.height - 100)/2, // -100 the height of paddle
+    y : (canvas.height - 90)/2, // -100 the height of paddle
     width : 10,
     height : 100,
     score : 0,
@@ -84,7 +84,7 @@ function resetBall(){
     ball.x = canvas.width/2;
     ball.y = canvas.height/2;
     ball.velocityX = -ball.velocityX;
-    ball.speed = 8;
+    ball.speed = 2;
 }
 
 // draw the net
